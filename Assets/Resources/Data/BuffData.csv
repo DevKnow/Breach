@@ -1,0 +1,2 @@
+﻿id,nameKo,descKo,nameEn,descEn,type,isaVolatile
+Thorn,가시,라운드 종료 시 {0}만큼 피해,Thorn,Take {0} damage on round end,Negative,False

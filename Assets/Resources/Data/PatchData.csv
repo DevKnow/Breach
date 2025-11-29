@@ -1,0 +1,15 @@
+﻿id,nameKo,descKo,nameEn,descEn,effects
+patch_boost,.부스트,페이로드 2 증가,BOOST,Increase payload by 2,Payload:2
+patch_rapid,래피드,클럭 코스트 1 감소,RAPID,Reduce clock cost by 1,ClockCost:-1
+patch_extracritical,크리티컬+,크리티컬 배율을 0.5 증가,CRITICAL+,Increase critical multiplier by 0.5,CritMult:0.5
+patch_4xscope,4배율 스코프,거리가 2 이상일 때 침투력 1 증가,4X SCOPE,Increase penetration by 1 when distance is 2 or more,Penetration:1:Distance>=2
+patch_8xscope,8배율 스코프,거리가 4 이상일 때 침투력 2 증가,8X SCOPE,Increase penetration by 2 when distance is 4 or more,Penetration:2:Distance>=4
+patch_burst,버스트,페이로드 (4-거리)만큼 증가 (최소 0),BURST,Increase payload by (4-distance) (min 0),Payload:4:0Distance:0
+patch_armor,아머,최대 무결성 10 증가,ARMOR,Increase max integrity by 10,MaxInt:10
+patch_regen,리젠,라운드 종료 시 무결성 3 회복,REGEN,Restore 3 integrity at end of round,Regen:3:RoundEnd
+patch_deflect,굴절,피격 시 15% 확률로 무효화,DEFLECT,15% chance to deflect when hit,Deflect:15
+patch_recovery,복원,사망 시 무결성 10으로 부활(전투당 1회),RECOVERY,"On death, revive with 10 integrity (once per battle)",Revive:10:1
+patch_cache,캐시,남은 클럭 코스트 다음 라운드 전이 (최대 2),CACHE,Carry over unused clock to next round (max 2),ClockCarry:2
+patch_priority,우선 행동,"동속일 때 먼저 행동 (단, 모두 이 효과가 있을 경우 플레이어가 우선됨)",PRIORITY,Act first at same layer (player wins ties if both have this effect),Priority
+patch_adaptive,어댑티브,침투력 1 증가,ADAPTIVE,Increase penetration by 1,Penetration:1:Distance>=2
+patch_memoryexpansion,메모리 확장,모듈 슬롯 1 증가,Memory Expansion,Increase module slot by 1,ModuleSlot:1

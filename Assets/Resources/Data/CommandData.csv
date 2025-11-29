@@ -1,0 +1,19 @@
+﻿id,nameKo,descKo,nameEn,descEn,type,minRange,maxRange,clockCost,penModifier,payload,criticalMultiplier,effects
+cmd_ping,핑,,PING,,Attack,0,1,1,0,5,1.5,
+cmd_scan,스캔,다음 공격의 침투력 1 증가,SCAN,Increase penetration of next attack by 1,Support,,,1,,,,BuffNext:Penetration:1
+cmd_corrupted,메모리 오염,,STACK CORRUPTED,,Attack,0,2,2,,8,1.5,
+cmd_inject,인젝,,INJECT,,Attack,0,1,3,0,15,1.5,
+cmd_snipe,스나이프,,SNIPE,,Attack,1,3,4,0,12,2,
+cmd_bruteforce,브루트 포스,,BRUTE FORCE,,Attack,0,1,5,0,25,1.5,
+cmd_ddos,디도스,적 다음 라운드 클록 2 감소,DDOS,Reduce target's next round clock by 2,Attack,1,4,5,0,12,1.8,EnemyClock:-2:NextRound
+cmd_exploit,익스플로잇,,EXPLOIT,,Attack,,,4,0,,2,
+cmd_fragment,단편화,"3회 연속 공격 (단, 각각 명중 판정을 진행함)",FRAGMENT,Attack 3 times (each hit rolls separately),Attack,0,2,4,7,6,1.3,MultiHit:3
+cmd_ransomware,랜섬웨어,3턴 동안 라운드 종료 시 5 피해,RANSOMWARE,Deal 5 damage at end of round for 3 turns,Attack,0,1,3,0,10,1.5,DoT:5:3:RoundEnd
+cmd_rootkit,루트킷,명중이 실패해도 5 피해,ROOTKIT,Deal 5 damage even on miss,Attack,0,2,4,0,20,2,MissDamage:5
+cmd_spoofing,스푸핑,,SPOOFING,,Attack,1,4,3,0,10,1.8,
+cmd_firewall,방화벽,이번 라운드 피격 시 데미지 5 감소,FIREWALL,Reduce damage taken by 5 this round,Support,,,2,,,,Shield:5:ThisRound
+cmd_overclock,오버클록,다음 공격 페이로드 5증가,OVERCLOCK,Increase payload of next attack by 5,Support,,,2,,,,BuffNext:Payload:5
+cmd_cookie,쿠키,남은 클럭을 다음 라운드로 전이 (최대 3),COOKIE,Carry over unused clock to next round (max 3),Support,,,2,,,,ClockCarry:3
+cmd_reboot,리부트,무결성 20 회복,REBOOT,Restore 20 integrity,Support,,,3,,,,Heal:20
+cmd_scramble,스크램블,대상의 다음 공격의 침투력 3 감소,SCRAMBLE,Reduce target's next attack penetration by 3,Support,,,2,,,,Debuff:Penetration:-3:NextAttack
+cmd_snooping,스누핑,적의 이번 라운드 LAYER 확인,SNOOPING,Reveal enemy's this round layer,Support,,,1,,,,Reveal:Layer

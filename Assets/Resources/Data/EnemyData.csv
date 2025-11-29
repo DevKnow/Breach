@@ -1,0 +1,3 @@
+﻿id,nameKo,nameEn,defaultMaxIntegrity,payloadBonus,modules,patches
+enemy_firewall,방화벽,Firewall,60,2,cmd_firewall,patch_rapid
+,,,,,cmd_corrupted,patch_4xscope

@@ -1,0 +1,4 @@
+﻿id,nameKo,nameEn,defaultMaxIntegrity,payloadBonus
+proc_ghost,고스트,GHOST,50,5
+proc_daemon,데몬,DAEMON,35,8
+proc_proxy,프록시,PROXY,65,3
