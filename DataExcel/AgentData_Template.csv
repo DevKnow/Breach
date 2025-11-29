@@ -1,3 +1,0 @@
-id,nameKo,nameEn,defaultMaxIntegrity,penetrationBonus,commands
-agent_scanner,스캐너,Scanner,80,0,cmd_scan|cmd_ping
-agent_breaker,브레이커,Breaker,100,5,cmd_strike|cmd_breach
