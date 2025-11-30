@@ -89,7 +89,7 @@ public class CommandCardView : MonoBehaviour, IBindable<CommandData>
 
     private void ClearEffectList()
     {
-        for (int i = _effectList.Count -1; i >= 0; i--)
+        for (int i = 0, iMax = _effectList.Count; i < iMax; i++)
         {
             PoolManager.Instance.ReleaseEffectItem(_effectList[i]);
         }
