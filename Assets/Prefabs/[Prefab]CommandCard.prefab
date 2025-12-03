@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -549,7 +549,7 @@ MonoBehaviour:
   _clock: {fileID: 728928011048867217}
   _range: {fileID: 7509802543660454050}
   _atkGroup: {fileID: 4956014571061216227}
-  _atkLayout: {fileID: 5184541019301927483}
+  _atkLayout: {fileID: 0}
   _penetrationBonus: {fileID: 2819405360833113351}
   _payload: {fileID: 4207166554195623645}
   _criticalMultiplier: {fileID: 7572481671145551163}
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.039215688, g: 0.22745098, b: 0.22745098, a: 1}
+  m_Color: {r: 0.101960786, g: 0.101960786, b: 0.11764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -714,7 +714,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8014343524087350963}
   - component: {fileID: 7313751874032409339}
-  - component: {fileID: 8163227328534729925}
   - component: {fileID: 3072003712047480820}
   m_Layer: 5
   m_Name: '[Group]DefaultStats'
@@ -770,26 +769,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &8163227328534729925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7477659769789020593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: 104
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!225 &3072003712047480820
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -969,8 +948,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288322122
-  m_fontColor: {r: 0.2901961, g: 0.6039216, b: 0.6039216, a: 1}
+    rgba: 4288710792
+  m_fontColor: {r: 0.53333336, g: 0.53333336, b: 0.627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1053,7 +1032,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2750816252604707561}
   - component: {fileID: 8170905640571061787}
-  - component: {fileID: 5184541019301927483}
   - component: {fileID: 4956014571061216227}
   m_Layer: 5
   m_Name: '[Group]AttackStats'
@@ -1110,26 +1088,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &5184541019301927483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8432370957933076500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: 110
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!225 &4956014571061216227
 CanvasGroup:
   m_ObjectHideFlags: 0

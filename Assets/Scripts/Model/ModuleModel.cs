@@ -2,30 +2,20 @@ using System.Collections.Generic;
 
 public class ModuleModel
 {
-    private ModuleData _data;
-    private List<CommandModel> _commands = new();
+    private CommandModel _command;
     private List<PatchModel> _installedPatches = new();
 
-    public ModuleData Data => _data;
-    public IReadOnlyList<CommandModel> Commands => _commands;
+    public CommandModel Command => _command;
+    public IReadOnlyList<PatchModel> InstalledPatches => _installedPatches;
 
-    public ModuleModel(ModuleData data)
+    public ModuleModel(CommandData commandData)
     {
-        _data = data;
-        ParseCommands();
+        _command = new CommandModel(commandData);
     }
 
-    private void ParseCommands()
+    public ModuleModel(CommandModel command)
     {
-        if (_data.commands == null)
-            return;
-
-        for (int i = 0, iMax = _data.commands.Length; i < iMax; i++)
-        {
-            var commandData = DataLoader.GetCommandData(_data.commands[i]);
-            if (commandData != null)
-                _commands.Add(new CommandModel(commandData));
-        }
+        _command = command;
     }
 
     #region Patch Funcs
@@ -63,20 +53,10 @@ public class ModuleModel
 
     public int GetMaxIntegrityAdder()
     {
-        var sum = _data.integrityBonus;
+        var sum = 0;
         for (int i = 0, iMax = _installedPatches.Count; i < iMax; i++)
         {
             sum += _installedPatches[i].GetMaxIntegrityAdder();
-        }
-        return sum;
-    }
-
-    public int GetPayloadAdder()
-    {
-        var sum = _data.payloadBonus;
-        for (int i = 0, iMax = _installedPatches.Count; i < iMax; i++)
-        {
-            sum += _installedPatches[i].GetPayloadAdder();
         }
         return sum;
     }

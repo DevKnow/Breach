@@ -122,40 +122,40 @@ public class SaveManager : MonoBehaviour
 
     public bool IsModuleUnlocked(string moduleId)
     {
-        return _saveData.unlockedModules.Contains(moduleId);
+        return _saveData.unlockedCommands.Contains(moduleId);
     }
 
     public bool IsModuleDiscovered(string moduleId)
     {
-        return _saveData.discoveredModules.Contains(moduleId);
+        return _saveData.discoveredCommands.Contains(moduleId);
     }
 
     public void DiscoverModule(string moduleId)
     {
-        if (_saveData.discoveredModules.Contains(moduleId))
+        if (_saveData.discoveredCommands.Contains(moduleId))
             return;
 
-        _saveData.discoveredModules.Add(moduleId);
+        _saveData.discoveredCommands.Add(moduleId);
         Save();
     }
 
     public void UnlockModule(string moduleId)
     {
-        if (_saveData.unlockedModules.Contains(moduleId))
+        if (_saveData.unlockedCommands.Contains(moduleId))
             return;
 
-        _saveData.unlockedModules.Add(moduleId);
+        _saveData.unlockedCommands.Add(moduleId);
         Save();
     }
 
     public List<string> GetUnlockedModules()
     {
-        return _saveData.unlockedModules;
+        return _saveData.unlockedCommands;
     }
 
     public List<string> GetDiscoveredModules()
     {
-        return _saveData.discoveredModules;
+        return _saveData.discoveredCommands;
     }
 
     #endregion

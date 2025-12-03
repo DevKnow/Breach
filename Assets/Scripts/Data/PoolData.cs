@@ -5,5 +5,5 @@ using System.Collections.Generic;
 public class PoolData
 {
     public int id;
-    public List<string> modules = new();
+    public List<string> commands = new();
 }

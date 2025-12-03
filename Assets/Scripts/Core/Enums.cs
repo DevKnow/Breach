@@ -5,12 +5,6 @@ public enum LANGUAGE
     En,
 }
 
-public enum ModuleType
-{
-    Malware,
-    Firewall,
-}
-
 public enum CommandType
 {
     None,

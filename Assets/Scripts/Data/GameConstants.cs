@@ -8,7 +8,6 @@ public static class GameConstants
     public const int TotalSectors = 7;
 
     // Module/Patch
-    public const int DefaultMaxModuleSlots = 3;
     public const int DefaultMaxPatchesPerModule = 3;
 
     // Dice

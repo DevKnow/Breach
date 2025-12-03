@@ -132,17 +132,13 @@ public class GameManager : MonoBehaviour
         var playerAgents = new List<ProgramModel>();
         var enemyAgents = new List<ProgramModel>();
 
-        // 테스트용 플레이어 생성
         var playerData = DataLoader.GetProgramData("proc_ghost");
         if (playerData != null)
         {
             var player = new PlayerProgramModel(playerData);
-            // 테스트용 모듈 장착
-            player.InstallModule("mod_worm");
             playerAgents.Add(player);
         }
 
-        // 테스트용 적 생성
         var enemyData = DataLoader.GetEnemyData("enemy_firewall");
         if (enemyData != null)
         {

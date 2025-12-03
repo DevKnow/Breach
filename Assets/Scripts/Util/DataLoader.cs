@@ -7,7 +7,6 @@ public static class DataLoader
 {
     private static Dictionary<string, ProgramData> _programData;
     private static Dictionary<string, CommandData> _commandData;
-    private static Dictionary<string, ModuleData> _moduleData;
     private static Dictionary<string, PatchData> _patchData;
     private static Dictionary<string, EnemyData> _enemyData;
     private static Dictionary<BuffKeyword, BuffData> _buffData;
@@ -18,7 +17,6 @@ public static class DataLoader
     {
         _programData = LoadData<ProgramData>("Data/ProgramData");
         _commandData = LoadData<CommandData>("Data/CommandData");
-        _moduleData = LoadData<ModuleData>("Data/ModuleData");
         _patchData = LoadData<PatchData>("Data/PatchData");
         _enemyData = LoadEnemyData("Data/EnemyData");
         _buffData = LoadBuffData("Data/BuffData");
@@ -107,13 +105,13 @@ public static class DataLoader
             headers[i] = headers[i].Trim();
         }
 
-        int idIdx = Array.IndexOf(headers, "id");
-        int nameKoIdx = Array.IndexOf(headers, "nameKo");
-        int nameEnIdx = Array.IndexOf(headers, "nameEn");
-        int integrityIdx = Array.IndexOf(headers, "defaultMaxIntegrity");
-        int payloadIdx = Array.IndexOf(headers, "payloadBonus");
-        int moduleIdx = Array.IndexOf(headers, "module");
-        int patchesIdx = Array.IndexOf(headers, "patches");
+        var idIdx = Array.IndexOf(headers, "id");
+        var nameKoIdx = Array.IndexOf(headers, "nameKo");
+        var nameEnIdx = Array.IndexOf(headers, "nameEn");
+        var integrityIdx = Array.IndexOf(headers, "defaultMaxIntegrity");
+        var payloadIdx = Array.IndexOf(headers, "payloadBonus");
+        var commandIdx = Array.IndexOf(headers, "commands");
+        var patchesIdx = Array.IndexOf(headers, "patches");
 
         EnemyData currentEnemy = null;
 
@@ -137,7 +135,7 @@ public static class DataLoader
                     nameEn = values[nameEnIdx].Trim(),
                     defaultMaxIntegrity = int.TryParse(values[integrityIdx].Trim(), out var integrity) ? integrity : 0,
                     payloadBonus = int.TryParse(values[payloadIdx].Trim(), out var payload) ? payload : 0,
-                    modules = new List<EnemyModuleEntry>()
+                    commands = new List<EnemyModuleEntry>()
                 };
 
                 if (!dict.TryAdd(id, currentEnemy))
@@ -148,13 +146,13 @@ public static class DataLoader
 
             if (currentEnemy != null)
             {
-                var moduleId = values[moduleIdx].Trim();
-                if (!string.IsNullOrEmpty(moduleId))
+                var commandId = values[commandIdx].Trim();
+                if (!string.IsNullOrEmpty(commandId))
                 {
                     var patchesValue = values[patchesIdx].Trim();
-                    currentEnemy.modules.Add(new EnemyModuleEntry
+                    currentEnemy.commands.Add(new EnemyModuleEntry
                     {
-                        moduleId = moduleId,
+                        commandId = commandId,
                         patches = string.IsNullOrEmpty(patchesValue) ? Array.Empty<string>() : patchesValue.Split('|')
                     });
                 }
@@ -209,36 +207,6 @@ public static class DataLoader
         return null;
     }
 
-    public static ModuleData GetModuleData(string id)
-    {
-        if (_moduleData == null) LoadAll();
-        if (_moduleData.TryGetValue(id, out var data)) return data;
-        Debug.LogError($"ModuleData not found: {id}");
-        return null;
-    }
-
-    public static List<ModuleData> GetModulesByRarity(Rarity rarity)
-    {
-        if (_moduleData == null) LoadAll();
-
-        var result = new List<ModuleData>();
-        foreach (var data in _moduleData.Values)
-        {
-            if (data.rarity == rarity)
-                result.Add(data);
-        }
-        return result;
-    }
-
-    public static ModuleData GetRandomModule(Rarity rarity)
-    {
-        var modules = GetModulesByRarity(rarity);
-        if (modules.Count == 0)
-            return null;
-
-        return modules[UnityEngine.Random.Range(0, modules.Count)];
-    }
-
     public static PatchData GetPatchData(string id)
     {
         if (_patchData == null) LoadAll();
@@ -285,7 +253,7 @@ public static class DataLoader
         }
 
         int idIdx = Array.IndexOf(headers, "id");
-        int moduleIdx = Array.IndexOf(headers, "module");
+        int commandsIdx = Array.IndexOf(headers, "commands");
 
         PoolData currentPool = null;
 
@@ -307,7 +275,7 @@ public static class DataLoader
                     currentPool = new PoolData
                     {
                         id = id,
-                        modules = new List<string>()
+                        commands = new List<string>()
                     };
 
                     if (!dict.TryAdd(id, currentPool))
@@ -319,10 +287,10 @@ public static class DataLoader
 
             if (currentPool != null)
             {
-                var moduleId = values[moduleIdx].Trim();
-                if (!string.IsNullOrEmpty(moduleId))
+                var commandId = values[commandsIdx].Trim();
+                if (!string.IsNullOrEmpty(commandId))
                 {
-                    currentPool.modules.Add(moduleId);
+                    currentPool.commands.Add(commandId);
                 }
             }
         }

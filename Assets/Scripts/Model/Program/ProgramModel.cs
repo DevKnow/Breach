@@ -63,9 +63,9 @@ public abstract class ProgramModel
         _installedModules.Add(module);
     }
 
-    public void InstallModule(string moduleId)
+    public void InstallCommand(string commandId)
     {
-        var data = DataLoader.GetModuleData(moduleId);
+        var data = DataLoader.GetCommandData(commandId);
         if (data != null)
             _installedModules.Add(new ModuleModel(data));
     }
@@ -95,7 +95,7 @@ public abstract class ProgramModel
 
         for (int i = 0, iMax = _installedModules.Count; i < iMax; i++)
         {
-            commands.AddRange(_installedModules[i].Commands);
+            // TODO
         }
 
         return commands;
@@ -138,7 +138,7 @@ public abstract class ProgramModel
         sum += _buff.GetPayloadAdder();
         for (int i = 0, iMax = _installedModules.Count; i < iMax; i++)
         {
-            sum += _installedModules[i].GetPayloadAdder();
+            // TODO
         }
 
         return sum;

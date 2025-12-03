@@ -6,11 +6,11 @@ public class SaveData
 {
     // 해금
     public List<string> unlockedPrograms = new();
-    public List<string> unlockedModules = new();
+    public List<string> unlockedCommands = new();
 
     // 발견 (소스코드 획득, 해금 가능)
     public List<string> discoveredPrograms = new();
-    public List<string> discoveredModules = new();
+    public List<string> discoveredCommands = new();
 
     // 해금용 재화
     public int cache;
